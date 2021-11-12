@@ -10157,6 +10157,8 @@ h3 {
   transition: all 0.2s ease-in-out;
   opacity: 0;
   background-color: rgba(33, 66, 99, 0.8);
+  /* background-color: rgba(58, 127, 219, 1);  */
+  /* background-color: rgba(58, 127, 219, 0.8); */
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
