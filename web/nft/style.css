@@ -10147,7 +10147,9 @@ h3 {
   border-radius: 0.5rem;
   overflow: hidden;
   transition: transform .2s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
+
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
   top: 0;
