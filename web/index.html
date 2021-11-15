@@ -39,6 +39,9 @@
     .jumbo {
         position: relative;
         overflow: hidden;
+        border-radius: 15px;
+        background: linear-gradient(215deg, rgb(67, 78, 126) 10%, rgba(67, 126, 126) 100%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     }
 
     .jumbo img {
@@ -49,6 +52,27 @@
         height: auto;
         opacity: 0.3;
 
+    }
+
+    .smartcontract {
+        border-radius: 15px;
+        background: linear-gradient(215deg, rgba(110, 117, 124, 0.692) 10%, rgb(110, 117, 124) 100%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .swap {
+        min-height: 23rem;
+        max-height: 23rem;
+        position: relative;
+        border-radius: 15px;
+        background: linear-gradient(215deg, rgba(110, 117, 124, 0.692) 10%, rgb(110, 117, 124) 100%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .nft {
+        border-radius: 15px;
+        background: linear-gradient(215deg, rgb(177, 142, 118) 10%, rgba(177, 155, 118, 0.096) 100%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     }
 
     .contract-info {
@@ -84,8 +108,7 @@
                     <span class="text-danger fw-bold launch_text fs-2 fst-italic"></span>
                 </div>
                 <div class="col-12">
-                    <div class="text-light  fs-5 px-sm-5 px-3 pt-5 pb-5 mb-0 jumbo" style="border-radius: 15px; background: linear-gradient(215deg, rgb(67, 78, 126) 10%, rgba(67, 126, 126) 100%);  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-                    ">
+                    <div class="text-light  fs-5 px-sm-5 px-3 pt-5 pb-5 mb-0 jumbo">
                         <img src="FLAT_512.png">
                         <h1 class="text-warning fst-italic fw-bold">FLAT&nbsp;ERIC&nbsp;is&nbsp;back&nbsp;!</h1>
                         <!-- <p class="fw-bold fst-italic mb-2 ps-md-2">... and proudly presents his nice and shiny creation:</p> -->
@@ -117,8 +140,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="text-secondary fw-bold fs-5"><i class="bi bi-list"></i> Smart Contract</div>
-                    <div class="bg-secondary text-light fs-5 contract-info" style="border-radius: 15px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-                    ">
+                    <div class="text-light fs-5 contract-info smartcontract">
                         <div class="d-flex align-items-center justify-content-center h-100">
                             <div>
                                 <h2 class="fw-bold text-warning">1&nbsp;<span class="tokenName"></span>&nbsp;≈&nbsp;<span class="currentMarketPrice fst-italic">&nbsp;...</span>&nbsp;<span class="stableName"></span></h2>
@@ -140,8 +162,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="text-secondary fw-bold fs-5"><i class="bi bi-list"></i> Swap</div>
-                    <div class="bg-secondary text-light fs-5 px-sm-5 px-3 pt-4 pb-4" style="min-height: 23rem;max-height: 23rem;position: relative;border-radius: 15px;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-                    ">
+                    <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap">
                         <span class="badge bg-danger rounded-pill connect-msg" style="position: absolute;top:5px;right: 5px;padding-top: 1px;padding-bottom: 2px;">
                             <div class="spinner-border spinner-border-xs text-light" role="status">
                                 <span class="visually-hidden">Connecting TronLink Wallet</span>
@@ -204,17 +225,16 @@
                 </div>
                 <div class="col-12">
                     <div class="text-secondary fw-bold fs-5"><i class="bi bi-list"></i> NFT</div>
-                    <div class="bg-secondary px-sm-5 px-3 pt-5 pb-5 mb-0" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-                    ">
+                    <div class="bg-secondary px-sm-5 px-3 pt-5 pb-5 mb-0 nft">
                         <h2 class="fw-bold fst-italic text-warning">You want more ?</h2>
-                        <span class="text-light fw-bold fs-5 fst-italic">Here we go: gather one of <span class="text-warning">16 unique Flat Eric NFTs</span> which come in different flavors <a href="https://opensea.io/collection/flateric" target="_blank" class="link-warning">here</a>.</span>
+                        <span class="text-light fw-bold fs-5 fst-italic">Here we go: gather one of <span class="text-warning">16 unique Flat Eric NFTs</span> which come in different flavors <a href="https://flateric.cc/nft" target="_blank" class="link-warning">here</a>.</span>
                     </div>
                 </div>
                 <div class="col-12 text-center" style="font-size: small;position:relative">
                     <span class="fw-bold text-secondary">FLAT&nbsp;ERIC&nbsp;FlatCoin</span>
                     <div style="font-size: xx-small;position:absolute; bottom:1px; right: 0px">
                         <span class="text-secondary">
-                            (build <build>45</build>)
+                            (build <build>46</build>)
                         </span>
                     </div>
                 </div>
