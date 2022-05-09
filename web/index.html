@@ -1,272 +1,341 @@
-<!doctype html>
-<html lang="en" style="height: 100vh;">
+<!DOCTYPE html>
+<html lang="en" style="height: 100vh">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>FLAT ERIC FlatCoin DEX</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>FLAT ERIC FlatCoin DEX</title>
 </head>
 <style>
-    .btn {
-        outline: none;
-        box-shadow: none !important;
-    }
+  .btn {
+    outline: none;
+    box-shadow: none !important;
+  }
 
-    input[type="text"] {
-        outline: none;
-        box-shadow: none !important;
-    }
+  input[type="text"] {
+    outline: none;
+    box-shadow: none !important;
+  }
 
-    input[type="text"]:disabled {
-        background-color: #c7cace !important;
-        border-color: #c7cace !important;
-    }
+  input[type="text"]:disabled {
+    background-color: #c7cace !important;
+    border-color: #c7cace !important;
+  }
 
-    ul {
-        list-style-type: square;
-    }
+  ul {
+    list-style-type: square;
+  }
 
-    .spinner-border-xs {
-        width: 0.8rem;
-        height: 0.8rem;
-        border-width: .15em;
-    }
+  .spinner-border-xs {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-width: 0.15em;
+  }
 
+  .jumbo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(215deg,
+        rgb(67, 78, 126) 10%,
+        rgba(67, 126, 126) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
 
-    .jumbo {
-        position: relative;
-        overflow: hidden;
-        border-radius: 15px;
-        background: linear-gradient(215deg, rgb(67, 78, 126) 10%, rgba(67, 126, 126) 100%);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    }
+  .jumbo img {
+    position: absolute;
+    right: -64px;
+    bottom: -64px;
+    width: 60%;
+    height: auto;
+    opacity: 0.3;
+  }
 
-    .jumbo img {
-        position: absolute;
-        right: -64px;
-        bottom: -64px;
-        width: 60%;
-        height: auto;
-        opacity: 0.3;
+  .smartcontract {
+    border-radius: 15px;
+    background: linear-gradient(215deg,
+        rgba(110, 117, 124, 0.692) 10%,
+        rgb(110, 117, 124) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
 
-    }
+  .swap {
+    min-height: 23rem;
+    max-height: 23rem;
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(215deg,
+        rgba(110, 117, 124, 0.692) 10%,
+        rgb(110, 117, 124) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
 
-    .smartcontract {
-        border-radius: 15px;
-        background: linear-gradient(215deg, rgba(110, 117, 124, 0.692) 10%, rgb(110, 117, 124) 100%);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    }
+  .nft {
+    border-radius: 15px;
+    background: linear-gradient(215deg,
+        rgba(177, 132, 118, 0.8) 10%,
+        rgba(177, 161, 118, 0.8) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
 
-    .swap {
-        min-height: 23rem;
-        max-height: 23rem;
-        position: relative;
-        border-radius: 15px;
-        background: linear-gradient(215deg, rgba(110, 117, 124, 0.692) 10%, rgb(110, 117, 124) 100%);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    }
+  .contract-info {
+    min-height: 23rem;
+    max-height: 23rem;
+    height: 23rem;
+  }
 
-    .nft {
-        border-radius: 15px;
-        background: linear-gradient(215deg, rgba(177, 132, 118, 0.8) 10%, rgba(177, 161, 118, 0.8) 100%);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    }
-
+  @media (max-width: 991.98px) {
     .contract-info {
-        min-height: 23rem;
-        max-height: 23rem;
-        height: 23rem;
+      min-height: 13rem;
+      max-height: 13rem;
+      height: 13rem;
     }
-
-    @media (max-width: 991.98px) {
-        .contract-info {
-            min-height: 13rem;
-            max-height: 13rem;
-            height: 13rem;
-        }
-    }
+  }
 </style>
 
-<body style="min-height: 100vh;">
-    <div class="container main">
-        <nav class="navbar">
-            <div class="container-fluid p-0 fs-2">
-                <div style="display: flex;align-items:center;">
-                    <img src="FLAT_128.png" height="32px" width="32px" alt="">
-                    &nbsp;<span class="fw-bold">FlatCoin</span>&nbsp;
-                    <span class="fw-bold text-secondary fst-italic">DEX</span>
-                </div>
-                <span class="text-secondary account" style="font-size: x-small;"></span>
-            </div>
-        </nav>
-        <div class="py-4">
-            <div class="row g-4">
-                <div class="d-flex col-12 launch_count_down justify-content-center mt-0" hidden>
-                    <span class="text-danger fw-bold launch_text fs-2 fst-italic"></span>
-                </div>
-                <div class="col-12">
-                    <div class="text-light  fs-5 px-sm-5 px-3 pt-5 pb-5 mb-0 jumbo">
-                        <img src="FLAT_512.png">
-                        <h1 class="text-warning fst-italic fw-bold">FLAT&nbsp;ERIC&nbsp;is&nbsp;back&nbsp;!</h1>
-                        <!-- <p class="fw-bold fst-italic mb-2 ps-md-2">... and proudly presents his nice and shiny creation:</p> -->
-                        <p class="fw-bold fst-italic pb-4 ps-md-4">Featuring&nbsp;FlatCoin&nbsp;(FLAT) on&nbsp;TRON&nbsp;Blockchain</p>
-                        <button class="btn btn-light text-secondary fw-bold fst-italic" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">More ...</button>
-                        <div class="collapse" id="collapseExample">
-                            <div class="card card-body bg-secondary border-0 p-0" style="background: none !important">
-                                <ul class="fw-bold" style="font-size: small;">
-                                    <li class="mt-4">
-                                        FlatCoin&nbsp;(FLAT) is an ERC20 compliant Meme Token powered by the TRON&nbsp;Blockchain.
-                                    </li>
-                                    <li class="mt-4">
-                                        The <span class="text-warning">total supply of FLAT</span> is limited to <span class="text-warning">1&nbsp;000&nbsp;000</span> tokens of which <span class="text-warning">the initial sole owner is a <a class="contractLPCodeURL text-warning" href="" target="_blank" class="link-warning">Smart Contract</a></span>.
-                                    </li>
-                                    <li class="mt-4">
-                                        As no other party has access to any tokens owned by the Smart Contract the only way to initially obtain FLAT is to conduct a <span class="text-warning">FLAT&nbsp;<i class="bi bi-arrow-left-right"></i>&nbsp;USDT - Token Swap</span>.
-                                        Insofar the Smart Contract operates as an Automated Market Maker (AMM) by analogy with Decentralized Exchanges (DEX).
-                                    </li>
-                                    <li class="mt-4">
-                                        A Token Swap can be conducted by either withdrawing FLAT from or depositing FLAT to the Smart Contract. Please refer to <a class="text-warning" href="FlatCoin White Paper.pdf" target="_blank" class="link-warning">White&nbsp;Paper</a> for more information on token mechanics.
-                                    </li>
-                                    <li class="mt-4">
-                                        To swap FLAT&nbsp;<i class="bi bi-arrow-left-right"></i>&nbsp;USDT please connect your <a href="https://www.tronlink.org" target="_blank" class="text-warning">TronLink&nbsp;Wallet</a> (available on PC / iOS / Android).
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="text-secondary fw-bold fs-5"><i class="bi bi-list"></i> Smart Contract</div>
-                    <div class="text-light fs-5 contract-info smartcontract">
-                        <div class="d-flex align-items-center justify-content-center h-100">
-                            <div>
-                                <h2 class="fw-bold text-warning">1&nbsp;<span class="tokenName"></span>&nbsp;≈&nbsp;<span class="currentMarketPrice fst-italic">&nbsp;...</span>&nbsp;<span class="stableName"></span></h2>
-                                <table class="table table-sm table-borderless mb-0">
-                                    <tbody class="text-light fw-bold" style="font-size:small;">
-                                        <tr>
-                                            <td>Total Supply:</td>
-                                            <!-- <td><span class="tokenBalanceContract fst-italic">-</span></td> -->
-                                            <td><span class="fst-italic">1,000,000</span>&nbsp;<span class="tokenName"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Circulating Supply:</td>
-                                            <td><span class="tokenBalanceContract fst-italic">-</span>&nbsp;<span class="tokenName"></td>
-                                            <!-- <td><span class="tokenBalanceContractAvail fst-italic">-</span>%&nbsp;<span class="tokenName"></span></td> -->
-                                        </tr>
-                                        <tr>
-                                            <td>Total Value Locked:</span></td>
-                                            <td><span class="stableBalanceContract fst-italic">-</span>&nbsp;<span class="stableName"></span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="text-secondary fw-bold fs-5"><i class="bi bi-list"></i> Swap</div>
-                    <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap">
-                        <span class="badge bg-danger rounded-pill connect-msg" style="position: absolute;top:5px;right: 5px;padding-top: 1px;padding-bottom: 2px;">
-                            <div class="spinner-border spinner-border-xs text-light" role="status">
-                                <span class="visually-hidden">Connecting TronLink Wallet</span>
-                            </div>
-                            <span class="small">&nbsp;Connecting TronLink Wallet ...</span>
-                        </span>
-                        <div class="mb-4 mt-2 d-flex justify-content-end">
-                            <a class="text-light fw-bold" id="swap_input_balance_token" href="#" style="font-size: x-small;">Your <span class="tokenName"></span>&nbsp;Balance: <span class="balanceToken fst-italic">-</span></a>
-                            <div class="mx-4"></div>
-                            <a class="text-light fw-bold" id="swap_input_balance_stable" href="#" style="font-size: x-small;">Your <span class="stableName"></span>&nbsp;Balance: <span class="balanceStable fst-italic">-</span></a>
-                        </div>
-                        <hr style="height: 2px">
-                        <form class="swap_form">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img id="swap_from_img" src="usdt.e3719fbd.svg" height="48" width="48" />
-                                </div>
-                                <div style="min-width: 85px;">
-                                    <div class="mx-2 fw-bold" style="font-size: x-small;">Swap&nbsp;From:</div>
-                                    <div id="swap_from_stable" class="mx-2 fw-bold text-warning"><span class="stableName"></span></div>
-                                    <div id="swap_from_token" class="mx-2 fw-bold text-warning" hidden><span class="tokenName"></span></div>
-                                </div>
-                                <div class="w-100">
-                                    <a class="float-end text-light fw-bold" id="swap_from_input_balance_token" href="#" style="font-size: x-small;" hidden>Balance: <span class="balanceToken">-</span></a>
-                                    <input id="swap_from_input" type="text" class="form-control bg-light text-secondary border-3 border-light fw-bold rounded-pill" disabled>
-                                </div>
-                            </div>
-
-                            <div class="d-flex justify-content-start">
-                                <button id="switch_btn" class="btn btn-light text-secondary fw-bold mt-2 mb-2 pt-0 pb-0 rounded-pill" type="button">&nbsp;<i class="bi bi-arrow-down-up"></i>&nbsp;</button>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img id="swap_to_img" src="FLAT_128.png" height="48" width="48" />
-                                </div>
-                                <div style="min-width: 85px;">
-                                    <div class="mx-2 fw-bold" style="font-size: x-small;">Swap&nbsp;To:</div>
-                                    <div id="swap_to_token" class="mx-2 fw-bold text-warning"><span class="tokenName"></span></div>
-                                    <div id="swap_to_stable" class="mx-2 fw-bold text-warning" hidden><span class="stableName"></span></div>
-                                </div>
-                                <div class="w-100">
-                                    <a class="float-end text-light fw-bold" id="swap_to_input_balance_stable" href="#" style="font-size: x-small;" hidden>Balance: <span class="balanceStable">-</span></a>
-                                    <input id="swap_to_input" type="text" class="form-control bg-light text-secondary border-3 border-light fw-bold rounded-pill" disabled>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-end text-warning fw-bold" style="font-size: small">
-                                Price:&nbsp;<span class="price">-</span>&nbsp;<span class="stableName"></span>/<span class="tokenName"></span>
-                            </div>
-                            <hr style="height: 2px">
-                            <div class="d-flex justify-content-between mt-4">
-                                <div class="validationMsg align-self-end" style="font-size: small"></div>
-                                <button id="swap_btn" type="submit" class="btn btn-light text-secondary fw-bold fst-italic" type="button" disabled>Swap</button>
-                            </div>
-                            <div class="d-flex justify-content-end text-light" style="font-size: x-small">
-                                Swap&nbsp;fee:&nbsp;0%&nbsp;&nbsp;|&nbsp;&nbsp;Slippage&nbsp;tolerance:&nbsp;1%
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="text-secondary fw-bold fs-5"><i class="bi bi-list"></i> NFT</div>
-                    <div class="bg-secondary px-sm-5 px-3 pt-5 pb-5 mb-0 nft">
-                        <h2 class="fw-bold fst-italic text-warning">You want more ?</h2>
-                        <span class="text-light fw-bold fs-5 fst-italic">Here we go: gather one of <span class="text-warning">16 unique Flat Eric NFTs</span> which come in different flavors <a href="https://flateric.cc/nft" target="_blank" class="link-warning">here</a>.</span>
-                    </div>
-                </div>
-                <div class="col-12 text-center" style="font-size: small;position:relative">
-                    <span class="fw-bold text-secondary">FlatCoin&nbsp;DEX</span>
-                    <div style="font-size: xx-small;position:absolute; bottom:1px; right: 0px">
-                        <span class="text-secondary">
-                            (build <build>53</build>)
-                        </span>
-                    </div>
-                </div>
-                <div class="col-12 text-center mt-1" style="font-size: small;">
-                    <a class="text-secondary" href="https://twitter.com/raidshift" target="_blank" class="link-secondary"><i class="bi bi-twitter"></i>&nbsp;Twitter</a>
-                    &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a class="text-secondary" href="https://t.me/flatcoin" target="_blank" class="link-secondary"><i class="bi bi-telegram"></i>&nbsp;Telegram</a>
-                    &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a class="text-secondary" href="https://github.com/raidshift/flatcoin" target="_blank" class="link-secondary"><i class="bi bi-github"></i>&nbsp;GitHub</a>
-                    &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a class="contractLPCodeURL text-secondary" href="" target="_blank" class="link-secondary"><i class="bi bi-box"></i>&nbsp;Contract</a>
-                    &nbsp;&nbsp;|&nbsp;&nbsp;
-                    <a class="text-secondary" href="FlatCoin White Paper.pdf" target="_blank" class="link-secondary"><i class="bi bi-file-earmark-text"></i></i>&nbsp;White&nbsp;Paper</a>
-                </div>
-            </div>
+<body style="min-height: 100vh">
+  <div class="container main">
+    <nav class="navbar">
+      <div class="container-fluid p-0 fs-2">
+        <div style="display: flex; align-items: center">
+          <img src="FLAT_128.png" height="32px" width="32px" alt="" />
+          &nbsp;<span class="fw-bold">FlatCoin</span>&nbsp;
+          <span class="fw-bold text-secondary fst-italic">DEX</span>
         </div>
+        <span class="text-secondary account" style="font-size: x-small"></span>
+      </div>
+    </nav>
+    <div class="py-4">
+      <div class="row g-4">
+        <div class="d-flex col-12 launch_count_down justify-content-center mt-0" hidden>
+          <span class="text-danger fw-bold launch_text fs-2 fst-italic"></span>
+        </div>
+        <div class="col-12">
+          <div class="text-light fs-5 px-sm-5 px-3 pt-5 pb-5 mb-0 jumbo">
+            <img src="FLAT_512.png" />
+            <h1 class="text-warning fst-italic fw-bold">
+              FLAT&nbsp;ERIC&nbsp;is&nbsp;back&nbsp;!
+            </h1>
+            <p class="fw-bold fst-italic pb-4 ps-md-4">
+              Featuring&nbsp;FlatCoin&nbsp;(FLAT) on&nbsp;TRON&nbsp;Blockchain
+            </p>
+            <button class="btn btn-light text-secondary fw-bold fst-italic" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              More ...
+            </button>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body bg-secondary border-0 p-0" style="background: none !important">
+                <ul class="fw-bold" style="font-size: small">
+                  <li class="mt-4">
+                    FlatCoin&nbsp;(FLAT) is an ERC20 compliant Meme Token
+                    powered by the TRON&nbsp;Blockchain.
+                  </li>
+                  <li class="mt-4">
+                    The
+                    <span class="text-warning">total supply of FLAT</span> is
+                    limited to
+                    <span class="text-warning">1&nbsp;000&nbsp;000</span>
+                    tokens of which
+                    <span class="text-warning">the initial sole owner is a
+                      <a class="contractLPCodeURL text-warning" href="" target="_blank" class="link-warning">Smart Contract</a></span>.
+                  </li>
+                  <li class="mt-4">
+                    As no other party has access to any tokens owned by the
+                    Smart Contract the only way to initially obtain FLAT is to
+                    conduct a
+                    <span class="text-warning">FLAT&nbsp;<i class="bi bi-arrow-left-right"></i>&nbsp;USDT - Token Swap</span>. Insofar the Smart Contract operates as an Automated
+                    Market Maker (AMM) by analogy with Decentralized Exchanges
+                    (DEX).
+                  </li>
+                  <li class="mt-4">
+                    A Token Swap can be conducted by either withdrawing FLAT
+                    from or depositing FLAT to the Smart Contract. Please
+                    refer to
+                    <a class="text-warning" href="FlatCoin White Paper.pdf" target="_blank" class="link-warning">White&nbsp;Paper</a>
+                    for more information on token mechanics.
+                  </li>
+                  <li class="mt-4">
+                    To swap FLAT&nbsp;<i class="bi bi-arrow-left-right"></i>&nbsp;USDT please connect your
+                    <a href="https://www.tronlink.org" target="_blank" class="text-warning">TronLink&nbsp;Wallet</a>
+                    (available on PC / iOS / Android).
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="text-secondary fw-bold fs-5">
+            <i class="bi bi-list"></i> Smart Contract
+          </div>
+          <div class="text-light fs-5 contract-info smartcontract">
+            <div class="d-flex align-items-center justify-content-center h-100">
+              <div>
+                <h2 class="fw-bold text-warning">
+                  1&nbsp;<span class="tokenName"></span>&nbsp;≈&nbsp;<span class="currentMarketPrice fst-italic">&nbsp;...</span>&nbsp;<span class="stableName"></span>
+                </h2>
+                <table class="table table-sm table-borderless mb-0">
+                  <tbody class="text-light fw-bold" style="font-size: small">
+                    <tr>
+                      <td>Total Supply:</td>
+                      <!-- <td><span class="tokenBalanceContract fst-italic">-</span></td> -->
+                      <td>
+                        <span class="fst-italic">1,000,000</span>&nbsp;<span class="tokenName"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Circulating Supply:</td>
+                      <td>
+                        <span class="tokenBalanceContract fst-italic">-</span>&nbsp;<span class="tokenName"></span>
+                      </td>
+                      <!-- <td><span class="tokenBalanceContractAvail fst-italic">-</span>%&nbsp;<span class="tokenName"></span></td> -->
+                    </tr>
+                    <tr>
+                      <td>Total Value Locked:</td>
+                      <td>
+                        <span class="stableBalanceContract fst-italic">-</span>&nbsp;<span class="stableName"></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="text-secondary fw-bold fs-5">
+            <i class="bi bi-list"></i> Swap
+          </div>
+          <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap">
+            <span class="badge bg-danger rounded-pill connect-msg" style="position: absolute;top: 5px;right: 5px;padding-top: 1px;padding-bottom: 2px;">
+              <div class="spinner-border spinner-border-xs text-light" role="status">
+                <span class="visually-hidden">Connecting TronLink Wallet</span>
+              </div>
+              <span class="small">&nbsp;Connecting TronLink Wallet ...</span>
+            </span>
+            <div class="mb-4 mt-2 d-flex justify-content-end">
+              <a class="text-light fw-bold" id="swap_input_balance_token" href="#" style="font-size: x-small">Your <span class="tokenName"></span>&nbsp;Balance:
+                <span class="balanceToken fst-italic">-</span></a>
+              <div class="mx-4"></div>
+              <a class="text-light fw-bold" id="swap_input_balance_stable" href="#" style="font-size: x-small">Your <span class="stableName"></span>&nbsp;Balance:
+                <span class="balanceStable fst-italic">-</span></a>
+            </div>
+            <hr style="height: 2px" />
+            <form class="swap_form">
+              <div class="d-flex align-items-center">
+                <div>
+                  <img id="swap_from_img" src="usdt.e3719fbd.svg" height="48" width="48" />
+                </div>
+                <div style="min-width: 85px">
+                  <div class="mx-2 fw-bold" style="font-size: x-small">
+                    Swap&nbsp;From:
+                  </div>
+                  <div id="swap_from_stable" class="mx-2 fw-bold text-warning">
+                    <span class="stableName"></span>
+                  </div>
+                  <div id="swap_from_token" class="mx-2 fw-bold text-warning" hidden>
+                    <span class="tokenName"></span>
+                  </div>
+                </div>
+                <div class="w-100">
+                  <a class="float-end text-light fw-bold" id="swap_from_input_balance_token" href="#" style="font-size: x-small" hidden>Balance: <span class="balanceToken">-</span></a>
+                  <input id="swap_from_input" type="text" class="form-control bg-light text-secondary border-3 border-light fw-bold rounded-pill" disabled />
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-start">
+                <button id="switch_btn" class="btn btn-light text-secondary fw-bold mt-2 mb-2 pt-0 pb-0 rounded-pill" type="button">
+                  &nbsp;<i class="bi bi-arrow-down-up"></i>&nbsp;
+                </button>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <div>
+                  <img id="swap_to_img" src="FLAT_128.png" height="48" width="48" />
+                </div>
+                <div style="min-width: 85px">
+                  <div class="mx-2 fw-bold" style="font-size: x-small">
+                    Swap&nbsp;To:
+                  </div>
+                  <div id="swap_to_token" class="mx-2 fw-bold text-warning">
+                    <span class="tokenName"></span>
+                  </div>
+                  <div id="swap_to_stable" class="mx-2 fw-bold text-warning" hidden>
+                    <span class="stableName"></span>
+                  </div>
+                </div>
+                <div class="w-100">
+                  <a class="float-end text-light fw-bold" id="swap_to_input_balance_stable" href="#" style="font-size: x-small" hidden>Balance: <span class="balanceStable">-</span></a>
+                  <input id="swap_to_input" type="text" class="form-control bg-light text-secondary border-3 border-light fw-bold rounded-pill" disabled />
+                </div>
+              </div>
+              <div class="d-flex justify-content-end text-warning fw-bold" style="font-size: small">
+                Price:&nbsp;<span class="price">-</span>&nbsp;<span class="stableName"></span>/<span class="tokenName"></span>
+              </div>
+              <hr style="height: 2px" />
+              <div class="d-flex justify-content-between mt-4">
+                <div class="validationMsg align-self-end" style="font-size: small"></div>
+                <button id="swap_btn" type="submit" class="btn btn-light text-secondary fw-bold fst-italic" type="button" disabled>
+                  Swap
+                </button>
+              </div>
+              <div class="d-flex justify-content-end text-light" style="font-size: x-small">
+                Swap&nbsp;fee:&nbsp;0%&nbsp;&nbsp;|&nbsp;&nbsp;Slippage&nbsp;tolerance:&nbsp;1%
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="text-secondary fw-bold fs-5">
+            <i class="bi bi-list"></i> NFT
+          </div>
+          <div class="bg-secondary px-sm-5 px-3 pt-5 pb-5 mb-0 nft">
+            <h2 class="fw-bold fst-italic text-warning">You want more ?</h2>
+            <span class="text-light fw-bold fs-5 fst-italic">Here we go: gather one of
+              <span class="text-warning">16 unique Flat Eric NFTs</span> which
+              come in different flavors
+              <a href="https://flateric.cc/nft" target="_blank" class="link-warning">here</a>.</span>
+          </div>
+        </div>
+        <div class="col-12 text-center" style="font-size: small; position: relative">
+          <span class="fw-bold text-secondary">FlatCoin&nbsp;DEX</span>
+          <div style="
+                font-size: xx-small;
+                position: absolute;
+                bottom: 1px;
+                right: 0px;
+              ">
+            <span class="text-secondary"> (build <build>54</build>) </span>
+          </div>
+        </div>
+        <div class="col-12 text-center mt-1" style="font-size: small">
+          <a class="text-secondary" href="https://twitter.com/raidshift" target="_blank" class="link-secondary"><i class="bi bi-twitter"></i>&nbsp;Twitter</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="text-secondary" href="https://t.me/flatcoin" target="_blank" class="link-secondary"><i class="bi bi-telegram"></i>&nbsp;Telegram</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="text-secondary" href="https://github.com/raidshift/flatcoin" target="_blank" class="link-secondary"><i class="bi bi-github"></i>&nbsp;GitHub</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="contractLPCodeURL text-secondary" href="" target="_blank" class="link-secondary"><i class="bi bi-box"></i>&nbsp;Contract</a>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a class="text-secondary" href="FlatCoin White Paper.pdf" target="_blank" class="link-secondary"><i class="bi bi-file-earmark-text"></i>&nbsp;White&nbsp;Paper</a>
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js" integrity="sha512-ewfXo9Gq53e1q1+WDTjaHAGZ8UvCWq0eXONhwDuIoaH8xz2r96uoAYaQCm1oQhnBfRXrvJztNXFsTloJfgbL5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.min.js" integrity="sha512-ewfXo9Gq53e1q1+WDTjaHAGZ8UvCWq0eXONhwDuIoaH8xz2r96uoAYaQCm1oQhnBfRXrvJztNXFsTloJfgbL5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/9.0.1/bignumber.min.js" integrity="sha512-3dEpIO2t/6beQ77U/aYgVqJpmSkcvWuTFO4WhCQrSi2tSQV3U+k4plwSKlVOxKibsnd6Z/0evmClsMl4LVZ7Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/9.0.1/bignumber.min.js" integrity="sha512-3dEpIO2t/6beQ77U/aYgVqJpmSkcvWuTFO4WhCQrSi2tSQV3U+k4plwSKlVOxKibsnd6Z/0evmClsMl4LVZ7Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
