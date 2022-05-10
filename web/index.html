@@ -25,6 +25,21 @@
     border-color: #c7cace !important;
   }
 
+  ::placeholder {
+    color: #c7cace !important;
+    opacity: 1;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #c7cace !important;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #c7cace !important;
+  }
+
   ul {
     list-style-type: square;
   }
@@ -69,11 +84,11 @@
     max-height: 23rem;
     position: relative;
     border-radius: 15px;
-    background: linear-gradient(215deg,
+    /* background: linear-gradient(215deg,
         rgba(110, 117, 124, 0.692) 10%,
         rgb(110, 117, 124) 100%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.2);
+      0 6px 20px 0 rgba(0, 0, 0, 0.2); */
   }
 
   .nft {
@@ -212,76 +227,76 @@
           <div class="text-secondary fw-bold fs-5">
             <i class="bi bi-list"></i> Swap
           </div>
-          <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap">
+          <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap bg-dark">
             <span class="badge bg-danger rounded-pill connect-msg" style="position: absolute;top: 5px;right: 5px;padding-top: 1px;padding-bottom: 2px;">
               <div class="spinner-border spinner-border-xs text-light" role="status">
                 <span class="visually-hidden">Connecting TronLink Wallet</span>
               </div>
               <span class="small">&nbsp;Connecting TronLink Wallet ...</span>
             </span>
-            <div class="mb-4 mt-2 d-flex justify-content-end">
+            <!-- <div class="mb-4 mt-2 d-flex justify-content-end">
               <a class="text-light fw-bold" id="swap_input_balance_token" href="#" style="font-size: x-small">Your <span class="tokenName"></span>&nbsp;Balance:
                 <span class="balanceToken fst-italic">-</span></a>
               <div class="mx-4"></div>
               <a class="text-light fw-bold" id="swap_input_balance_stable" href="#" style="font-size: x-small">Your <span class="stableName"></span>&nbsp;Balance:
                 <span class="balanceStable fst-italic">-</span></a>
-            </div>
-            <hr style="height: 2px" />
-            <form class="swap_form">
-              <div class="d-flex align-items-center">
-                <div>
+            </div> -->
+            <!-- <hr style="height: 2px" /> -->
+            <form class="swap_form" autocomplete="off">
+
+
+              <div class="px-2 bg-secondary border-bottom border-3 border-dark pb-2 pt-2" style="height: 110px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="float-end text-warning" style="font-size: small;">
+                  Balance:&nbsp;<span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>&nbsp;&nbsp;&nbsp;<a class="text-light fw-bold" id="swap_input_balance_stable" href="#">max</a>
+                </div>
+                <div class="text-warning fw-bold fs-3">
+                  From
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <input id="swap_from_input" type="text" placeholder="0.000000" class="form-control bg-light text-light border-0 fw-bold fs-2 p-0" style="background-color: rgba(0, 0, 0, 0) !important;padding-left: 0px;" disabled />
+                  <div id="swap_from_stable" class="ms-2 me-2 fw-bold fs-2 text-warning">
+                    <span class="stableName"></span>
+                  </div>
+                  <div id="swap_from_token" class="ms-2 me-2 fw-bold fs-2 text-warning" hidden>
+                    <span class="tokenName"></span>
+                  </div>
                   <img id="swap_from_img" src="usdt.e3719fbd.svg" height="48" width="48" />
                 </div>
-                <div style="min-width: 85px">
-                  <div class="mx-2 fw-bold" style="font-size: x-small">
-                    Swap&nbsp;From:
-                  </div>
-                  <div id="swap_from_stable" class="mx-2 fw-bold text-warning">
-                    <span class="stableName"></span>
-                  </div>
-                  <div id="swap_from_token" class="mx-2 fw-bold text-warning" hidden>
-                    <span class="tokenName"></span>
-                  </div>
-                </div>
-                <div class="w-100">
-                  <a class="float-end text-light fw-bold" id="swap_from_input_balance_token" href="#" style="font-size: x-small" hidden>Balance: <span class="balanceToken">-</span></a>
-                  <input id="swap_from_input" type="text" class="form-control bg-light text-secondary border-3 border-light fw-bold rounded-pill" disabled />
-                </div>
               </div>
 
-              <div class="d-flex justify-content-start">
-                <button id="switch_btn" class="btn btn-light text-secondary fw-bold mt-2 mb-2 pt-0 pb-0 rounded-pill" type="button">
-                  &nbsp;<i class="bi bi-arrow-down-up"></i>&nbsp;
+              <!-- ********** -->
+              <div class="d-flex justify-content-center">
+                <button id="switch_btn" class="btn btn-secondary text-light fw-bold mt-2 mb-2 pt-0 pb-0 rounded-pill border-3 border-dark" type="button"  style="position:absolute;top:110px" >
+                  <i class="bi bi-arrow-down-up"></i>
                 </button>
               </div>
+              <!-- ********** -->
 
-              <div class="d-flex align-items-center">
-                <div>
-                  <img id="swap_to_img" src="FLAT_128.png" height="48" width="48" />
+              <div class="px-2 bg-secondary pt-2" style="height: 110px;border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;">
+                <div class="float-end text-warning" style="font-size: small;">
+                  Balance:&nbsp;<span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span>
                 </div>
-                <div style="min-width: 85px">
-                  <div class="mx-2 fw-bold" style="font-size: x-small">
-                    Swap&nbsp;To:
-                  </div>
-                  <div id="swap_to_token" class="mx-2 fw-bold text-warning">
-                    <span class="tokenName"></span>
-                  </div>
-                  <div id="swap_to_stable" class="mx-2 fw-bold text-warning" hidden>
+                <div class="text-warning fw-bold fs-3">
+                  To
+                </div>
+
+                <div class="d-flex align-items-center">
+                  <input id="swap_to_input" type="text" placeholder="0.000000" class="form-control bg-light text-light border-0 fw-bold fs-2 p-0" style="background-color: rgba(0, 0, 0, 0) !important;padding-left: 0px;" disabled />
+                  <div id="swap_to_stable" class="ms-2 me-2 fw-bold fs-2 text-warning" hidden>
                     <span class="stableName"></span>
                   </div>
-                </div>
-                <div class="w-100">
-                  <a class="float-end text-light fw-bold" id="swap_to_input_balance_stable" href="#" style="font-size: x-small" hidden>Balance: <span class="balanceStable">-</span></a>
-                  <input id="swap_to_input" type="text" class="form-control bg-light text-secondary border-3 border-light fw-bold rounded-pill" disabled />
+                  <div id="swap_to_token" class="ms-2 me-2 fw-bold fs-2 text-warning">
+                    <span class="tokenName"></span>
+                  </div>
+                  <img id="swap_to_img" src="FLAT_128.png" height="48" width="48" />
                 </div>
               </div>
-              <div class="d-flex justify-content-end text-warning fw-bold" style="font-size: small">
-                Price:&nbsp;<span class="price">-</span>&nbsp;<span class="stableName"></span>/<span class="tokenName"></span>
-              </div>
-              <hr style="height: 2px" />
+
+
               <div class="d-flex justify-content-between mt-4">
                 <div class="validationMsg align-self-end" style="font-size: small"></div>
-                <button id="swap_btn" type="submit" class="btn btn-light text-secondary fw-bold fst-italic" type="button" disabled>
+                <button id="swap_btn" type="submit" class="btn btn-secondary text-light fw-bold fst-italic" type="button" disabled>
                   Swap
                 </button>
               </div>
@@ -289,6 +304,8 @@
                 Swap&nbsp;fee:&nbsp;0%&nbsp;&nbsp;|&nbsp;&nbsp;Slippage&nbsp;tolerance:&nbsp;1%
               </div>
             </form>
+
+
           </div>
         </div>
         <div class="col-12">
@@ -311,7 +328,7 @@
                 bottom: 1px;
                 right: 0px;
               ">
-            <span class="text-secondary"> (build <build>54</build>) </span>
+            <span class="text-secondary"> (build <build>55</build>) </span>
           </div>
         </div>
         <div class="col-12 text-center mt-1" style="font-size: small">
