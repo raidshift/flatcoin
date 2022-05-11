@@ -138,13 +138,15 @@
             <h1 class="text-warning fst-italic fw-bold">
               FLAT&nbsp;ERIC&nbsp;is&nbsp;back&nbsp;!
             </h1>
-            <p class="fw-bold fst-italic pb-4 ps-md-4">
+            <p class="fw-bold fst-italic pb-2 ps-md-5">
               Featuring&nbsp;FlatCoin&nbsp;(FLAT) on&nbsp;TRON&nbsp;Blockchain
             </p>
-            <button class="btn btn-light text-secondary fw-bold fst-italic rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <div class="ps-md-5">
+            <button class="btn btn-sm btn-light text-secondary fw-bold fst-italic rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               More ...
             </button>
-            <div class="collapse" id="collapseExample">
+            </div>
+            <div class="collapse ps-md-5" id="collapseExample">
               <div class="card card-body bg-secondary border-0 p-0" style="background: none !important">
                 <ul class="fw-bold" style="font-size: small">
                   <li class="mt-4">
@@ -235,21 +237,22 @@
               <span class="small">&nbsp;Connecting TronLink Wallet ...</span>
             </span>
             <!-- <div class="mb-4 mt-2 d-flex justify-content-end">
-              <a class="text-light fw-bold" id="swap_input_balance_token" href="#" style="font-size: x-small">Your <span class="tokenName"></span>&nbsp;Balance:
-                <span class="balanceToken fst-italic">-</span></a>
+              <a class="text-warning fw-italic" id="swap_input_balance_token" href="#" style="font-size: small"><span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span></a>
               <div class="mx-4"></div>
-              <a class="text-light fw-bold" id="swap_input_balance_stable" href="#" style="font-size: x-small">Your <span class="stableName"></span>&nbsp;Balance:
-                <span class="balanceStable fst-italic">-</span></a>
+              <a class="text-warning fw-italic" id="swap_input_balance_stable" href="#" style="font-size: small"><span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span></a>
             </div> -->
             <!-- <hr style="height: 2px" /> -->
             <form class="swap_form" autocomplete="off">
 
               <div class="px-2 bg-secondary border-bottom border-3 border-light pb-2 pt-2" style="height: 110px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
-                <div class="float-end text-warning" style="font-size: small;">
-                  Balance:&nbsp;<span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>&nbsp;&nbsp;&nbsp;<a class="text-light fw-bold" id="swap_input_balance_stable" href="#">max</a>
-                </div>
-                <div class="text-warning fw-bold fs-3" style="box-sizing: content-box;height: 42px;">
-                  From
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="text-warning fw-bold fs-3" style="box-sizing: content-box;height: 42px;">
+                    From
+                  </div>
+                  <div class="text-warning" style="font-size: small;">
+                    Balance:&nbsp;<a class="text-warning fw-italic" id="swap_input_balance_stable" href="#" style="font-size: small"><span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span></a>
+                    <a class="text-warning fw-italic" id="swap_input_balance_token" href="#" style="font-size: small" hidden><span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span></a>
+                  </div>
                 </div>
 
                 <div class="d-flex align-items-center">
@@ -260,7 +263,7 @@
                   <div id="swap_from_token" class="ms-2 me-2 fw-bold fs-2 text-warning" hidden>
                     <span class="tokenName"></span>
                   </div>
-                  <img id="swap_from_img" src="usdt.e3719fbd.svg" height="48" width="48" />
+                  <img id="swap_from_img" src="usdt.png" height="48" width="48" style="filter: drop-shadow(2px 2px 2px #555);" />
                 </div>
               </div>
 
@@ -273,11 +276,15 @@
               <!-- ********** -->
 
               <div class="px-2 bg-secondary pt-2" style="height: 110px;border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;">
-                <div class="float-end text-warning" style="font-size: small;">
-                  Balance:&nbsp;<span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span>
-                </div>
-                <div class="text-warning fw-bold fs-3" style="box-sizing: content-box;height: 42px;">
-                  To
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="text-warning fw-bold fs-3" style="box-sizing: content-box;height: 42px;">
+                    To
+                  </div>
+                  <div class="text-warning" style="font-size: small;">
+                    Balance:&nbsp;<span id="swap_balance_token"><span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span></span>
+                    <span id="swap_balance_stable" hidden><span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span></span>
+                  </div>
                 </div>
 
                 <div class="d-flex align-items-center">
@@ -288,7 +295,7 @@
                   <div id="swap_to_token" class="ms-2 me-2 fw-bold fs-2 text-warning">
                     <span class="tokenName"></span>
                   </div>
-                  <img id="swap_to_img" src="FLAT_128.png" height="48" width="48" />
+                  <img id="swap_to_img" src="FLAT_128.png" height="48" width="48" style="filter: drop-shadow(2px 2px 2px #555);" />
                 </div>
               </div>
 
@@ -327,7 +334,7 @@
                 bottom: 1px;
                 right: 0px;
               ">
-            <span class="text-secondary"> (build <build>57</build>) </span>
+            <span class="text-secondary"> (build <build>58</build>) </span>
           </div>
         </div>
         <div class="col-12 text-center mt-1" style="font-size: small">
