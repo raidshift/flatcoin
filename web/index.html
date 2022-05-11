@@ -142,9 +142,9 @@
               Featuring&nbsp;FlatCoin&nbsp;(FLAT) on&nbsp;TRON&nbsp;Blockchain
             </p>
             <div class="ps-md-5">
-            <button class="btn btn-sm btn-light text-secondary fw-bold fst-italic rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              More ...
-            </button>
+              <button class="btn btn-sm btn-light text-secondary fw-bold fst-italic rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                More ...
+              </button>
             </div>
             <div class="collapse ps-md-5" id="collapseExample">
               <div class="card card-body bg-secondary border-0 p-0" style="background: none !important">
@@ -229,19 +229,14 @@
           <div class="text-secondary fw-bold fs-5">
             <i class="bi bi-list"></i> Swap
           </div>
-          <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap bg-secondary">
+          <div class="text-light fs-5 px-sm-5 px-3 pt-4 swap bg-secondary">
             <span class="badge bg-danger rounded-pill connect-msg" style="position: absolute;top: 5px;right: 5px;padding-top: 1px;padding-bottom: 2px;">
               <div class="spinner-border spinner-border-xs text-light" role="status">
                 <span class="visually-hidden">Connecting TronLink Wallet</span>
               </div>
               <span class="small">&nbsp;Connecting TronLink Wallet ...</span>
             </span>
-            <!-- <div class="mb-4 mt-2 d-flex justify-content-end">
-              <a class="text-warning fw-italic" id="swap_input_balance_token" href="#" style="font-size: small"><span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span></a>
-              <div class="mx-4"></div>
-              <a class="text-warning fw-italic" id="swap_input_balance_stable" href="#" style="font-size: small"><span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span></a>
-            </div> -->
-            <!-- <hr style="height: 2px" /> -->
+ 
             <form class="swap_form" autocomplete="off">
 
               <div class="px-2 bg-secondary border-bottom border-3 border-light pb-2 pt-2" style="height: 110px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
@@ -299,8 +294,11 @@
                 </div>
               </div>
 
+              <div class="text-warning px-2 fw-bold" style="font-size: small">
+                Price:&nbsp;<span class="price fst-italic ">-</span>&nbsp;<span class="stableName fst-italic "></span>/<span class="tokenName fst-italic"></span>
+              </div>
 
-              <div class="d-flex justify-content-between mt-5">
+              <div class="d-flex justify-content-between mt-4">
                 <div class="validationMsg align-self-end" style="font-size: small"></div>
                 <button id="swap_btn" type="submit" class="btn btn-secondary text-light border-3 border-light fw-bold fst-italic rounded-pill" type="button" disabled>
                   Swap
@@ -334,7 +332,7 @@
                 bottom: 1px;
                 right: 0px;
               ">
-            <span class="text-secondary"> (build <build>59</build>) </span>
+            <span class="text-secondary"> (build <build>60</build>) </span>
           </div>
         </div>
         <div class="col-12 text-center mt-1" style="font-size: small">
