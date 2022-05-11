@@ -84,11 +84,11 @@
     max-height: 23rem;
     position: relative;
     border-radius: 15px;
-    /* background: linear-gradient(215deg,
+    background: linear-gradient(215deg,
         rgba(110, 117, 124, 0.692) 10%,
         rgb(110, 117, 124) 100%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.2); */
+      0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
 
   .nft {
@@ -141,7 +141,7 @@
             <p class="fw-bold fst-italic pb-4 ps-md-4">
               Featuring&nbsp;FlatCoin&nbsp;(FLAT) on&nbsp;TRON&nbsp;Blockchain
             </p>
-            <button class="btn btn-light text-secondary fw-bold fst-italic" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-light text-secondary fw-bold fst-italic rounded-pill" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               More ...
             </button>
             <div class="collapse" id="collapseExample">
@@ -227,7 +227,7 @@
           <div class="text-secondary fw-bold fs-5">
             <i class="bi bi-list"></i> Swap
           </div>
-          <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap bg-dark">
+          <div class="text-light fs-5 px-sm-5 px-3 pt-4 pb-4 swap bg-secondary">
             <span class="badge bg-danger rounded-pill connect-msg" style="position: absolute;top: 5px;right: 5px;padding-top: 1px;padding-bottom: 2px;">
               <div class="spinner-border spinner-border-xs text-light" role="status">
                 <span class="visually-hidden">Connecting TronLink Wallet</span>
@@ -245,11 +245,11 @@
             <form class="swap_form" autocomplete="off">
 
 
-              <div class="px-2 bg-secondary border-bottom border-3 border-dark pb-2 pt-2" style="height: 110px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
+              <div class="px-2 bg-secondary border-bottom border-3 border-light pb-2 pt-2" style="height: 110px;border-top-left-radius: 15px;border-top-right-radius: 15px;">
                 <div class="float-end text-warning" style="font-size: small;">
                   Balance:&nbsp;<span class="balanceStable fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>&nbsp;&nbsp;&nbsp;<a class="text-light fw-bold" id="swap_input_balance_stable" href="#">max</a>
                 </div>
-                <div class="text-warning fw-bold fs-3">
+                <div class="text-warning fw-bold fs-3" style="box-sizing: content-box;height: 42px;">
                   From
                 </div>
 
@@ -267,7 +267,7 @@
 
               <!-- ********** -->
               <div class="d-flex justify-content-center">
-                <button id="switch_btn" class="btn btn-secondary text-light fw-bold mt-2 mb-2 pt-0 pb-0 rounded-pill border-3 border-dark" type="button"  style="position:absolute;top:110px" >
+                <button id="switch_btn" class="btn btn-secondary text-light fw-bold mt-2 mb-2 pt-0 pb-0 rounded-pill border-3 border-light" type="button" style="position:absolute;top:110px">
                   <i class="bi bi-arrow-down-up"></i>
                 </button>
               </div>
@@ -277,7 +277,7 @@
                 <div class="float-end text-warning" style="font-size: small;">
                   Balance:&nbsp;<span class="balanceToken fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span>
                 </div>
-                <div class="text-warning fw-bold fs-3">
+                <div class="text-warning fw-bold fs-3" style="box-sizing: content-box;height: 42px;">
                   To
                 </div>
 
@@ -294,9 +294,9 @@
               </div>
 
 
-              <div class="d-flex justify-content-between mt-4">
+              <div class="d-flex justify-content-between mt-5">
                 <div class="validationMsg align-self-end" style="font-size: small"></div>
-                <button id="swap_btn" type="submit" class="btn btn-secondary text-light fw-bold fst-italic" type="button" disabled>
+                <button id="swap_btn" type="submit" class="btn btn-secondary text-light border-3 border-light fw-bold fst-italic rounded-pill" type="button" disabled>
                   Swap
                 </button>
               </div>
@@ -328,7 +328,7 @@
                 bottom: 1px;
                 right: 0px;
               ">
-            <span class="text-secondary"> (build <build>55</build>) </span>
+            <span class="text-secondary"> (build <build>56</build>) </span>
           </div>
         </div>
         <div class="col-12 text-center mt-1" style="font-size: small">
