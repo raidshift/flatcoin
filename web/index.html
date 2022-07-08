@@ -4,12 +4,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA==" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css" integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <title>FLAT ERIC FlatCoin DEX</title>
 </head>
 <style>
+  body {
+    font-family: 'Kanit', sans-serif;
+  }
+
+  ::marker {
+    font-size: 1rem;
+  }
+
   .btn {
     outline: none;
     box-shadow: none !important;
@@ -150,36 +159,28 @@
                 <ul class="fw-bold" style="font-size: small">
                   <li class="mt-4">
                     FlatCoin&nbsp;(FLAT) is an ERC20 compliant Meme Token
-                    powered by the TRON&nbsp;Blockchain.
+                    powered by the <a class="contractLPCodeURL text-warning" href="" target="_blank" class="link-warning">TRON&nbsp;Blockchain</a>
                   </li>
                   <li class="mt-4">
                     The
                     <span class="text-warning">total supply of FLAT</span> is
                     limited to
                     <span class="text-warning">1&nbsp;000&nbsp;000</span>
-                    tokens of which
-                    <span class="text-warning">the initial sole owner is a
-                      <a class="contractLPCodeURL text-warning" href="" target="_blank" class="link-warning">Smart Contract</a></span>.
+                    Tokens which are
+                    <span class="text-warning">initially entirely locked in a
+                      <a class="contractLPCodeURL text-warning" href="" target="_blank" class="link-warning">Liquidity&nbsp;Pool&nbsp;Contract</a></span>
                   </li>
                   <li class="mt-4">
-                    As no other party has access to any tokens owned by the
-                    Smart Contract the only way to initially obtain FLAT is to
-                    conduct a
-                    <span class="text-warning">FLAT&nbsp;<i class="bi bi-arrow-left-right"></i>&nbsp;USDT - Token Swap</span>. Insofar the Smart Contract operates as an Automated
-                    Market Maker (AMM) by analogy with Decentralized Exchanges
-                    (DEX).
+                    FLAT can be acquired from the Liquidity Pool Contract in <span class="text-warning">exchange for USDT</span> via a Token Swap
                   </li>
                   <li class="mt-4">
-                    A Token Swap can be conducted by either withdrawing FLAT
-                    from or depositing FLAT to the Smart Contract. Please
-                    refer to
-                    <a class="text-warning" href="FlatCoin White Paper.pdf" target="_blank" class="link-warning">White&nbsp;Paper</a>
-                    for more information on token mechanics.
+                    The current FLAT price is determined by the amount of locked USDT in the Contract (Please refer to
+                    <a class="text-warning" href="FlatCoin White Paper.pdf" target="_blank" class="link-warning">White&nbsp;Paper</a> for exact mechanics)
                   </li>
                   <li class="mt-4">
-                    To swap FLAT&nbsp;<i class="bi bi-arrow-left-right"></i>&nbsp;USDT please connect your
+                    To interact with the Contract please connect
                     <a href="https://www.tronlink.org" target="_blank" class="text-warning">TronLink&nbsp;Wallet</a>
-                    (available on PC / iOS / Android).
+                    (available on PC / iOS / Android) to your TRON account
                   </li>
                 </ul>
               </div>
@@ -188,34 +189,33 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="text-secondary fw-bold fs-5">
-            <i class="bi bi-list"></i> Smart Contract
+            <i class="bi bi-list"></i> Liquidity Pool
           </div>
           <div class="text-light fs-5 contract-info smartcontract bg-secondary">
             <div class="d-flex align-items-center justify-content-center h-100">
               <div>
                 <div class="fw-bold text-warning fs-2">
-                  <span class="currentMarketPrice fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>/<span class="tokenName fst-italic"></span>
+                  <span class="currentMarketPrice fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>&nbsp;/&nbsp;<span class="tokenName fst-italic"></span>
                 </div>
+                <hr>
                 <table class="table table-sm table-borderless mb-0">
                   <tbody class="text-light fw-bold" style="font-size: small">
                     <tr>
-                      <td>Total Supply:</td>
-                      <!-- <td><span class="tokenBalanceContract fst-italic">-</span></td> -->
-                      <td>
-                        <span class="fst-italic">1,000,000</span>&nbsp;<span class="tokenName fst-italic"></span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Circulating Supply:</td>
-                      <td>
+                      <td class="pb-0">Locked-In:</td>
+                      <td class="pb-0">
                         <span class="tokenBalanceContract fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span>
                       </td>
-                      <!-- <td><span class="tokenBalanceContractAvail fst-italic">-</span>%&nbsp;<span class="tokenName"></span></td> -->
                     </tr>
                     <tr>
-                      <td>Total Value Locked:</td>
-                      <td>
+                      <td class="pt-0"></td>
+                      <td class="pt-0">
                         <span class="stableBalanceContract fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="pt-3">Circulating:</td>
+                      <td class="pt-3">
+                        <span class="tokenBalanceCirculating fst-italic">-</span>&nbsp;<span class="tokenName fst-italic"></span>
                       </td>
                     </tr>
                   </tbody>
@@ -287,7 +287,7 @@
               </div>
 
               <div class="text-warning px-2 fw-bold" style="font-size: small">
-                Price:&nbsp;<span class="price fst-italic ">-</span>&nbsp;<span class="stableName fst-italic "></span>/<span class="tokenName fst-italic"></span>
+                Price:&nbsp;<span class="price fst-italic ">-</span>&nbsp;<span class="stableName fst-italic "></span>&nbsp;/&nbsp;<span class="tokenName fst-italic"></span>
               </div>
 
               <div class="d-flex justify-content-between mt-4">
@@ -324,7 +324,7 @@
                 bottom: 1px;
                 right: 0px;
               ">
-            <span class="text-secondary"> (build <build>68</build>) </span>
+            <span class="text-secondary"> (build <build>69</build>) </span>
           </div>
         </div>
         <div class="col-12 text-center mt-1" style="font-size: small">
