@@ -196,10 +196,9 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="text-secondary fw-bold fs-5">
-            <i class="bi bi-list"></i> STATS
+            <i class="bi bi-list"></i> STATISTICS
           </div>
           <div class="text-light fs-5 contract-info smartcontract bg-secondary" style="position: relative;">
-            <canvas id="priceChart" style="z-index: 1;width: 100%;height: 100%;position: absolute"></canvas>
             <div class="d-flex align-items-center justify-content-center h-100">
               <div style="z-index: 2;">
                 <div class="text-warning fs-2 fw-bold">
@@ -320,14 +319,23 @@
         </div>
         <div class="col-12">
           <div class="text-secondary fw-bold fs-5">
-            <i class="bi bi-list"></i> NFT
+            <i class="bi bi-list"></i> CHART
           </div>
-          <div class="bg-secondary px-sm-5 px-3 pt-5 pb-5 mb-0 nft">
-            <h2 class="fw-bold fst-italic text-warning">You want more ?</h2>
+          <div class="bg-secondary nft px-sm-5 px-3 " style="position:relative">
+            <!-- <h2 class="fw-bold fst-italic text-warning">You want more ?</h2>
             <span class="text-light fs-5 fst-italic">Here we go: gather one of
               <span class="text-warning">16 unique Flat Eric NFTs</span> which
               come in different flavors
-              <a href="https://opensea.io/collection/flateric" target="_blank" class="link-warning">here</a>.</span>
+              <a href="https://opensea.io/collection/flateric" target="_blank" class="link-warning">here</a>.</span> -->
+              <canvas id="priceChart" style="width: 100%;height: 100%;position: absolute;z-index: 3;" class="pt-5 pb-3"></canvas>
+              <!-- <canvas id="priceChart"></canvas> -->
+
+
+            <div style="height:23rem;text-align: center" class="text-warning pt-3 fst-italic">
+              
+              <!-- <span>Current price:</span>&nbsp;<span class="currentMarketPrice fst-italic">-</span>&nbsp;<span class="stableName fst-italic"></span>&nbsp;/&nbsp;<span class="tokenName fst-italic"></span> -->
+              FLAT / USDT
+            </div>
           </div>
         </div>
         <div class="col-12 text-center" style="font-size: small; position: relative">
@@ -338,7 +346,7 @@
                 bottom: 1px;
                 right: 0px;
               ">
-            <span class="text-secondary"> (build <build>81</build>) </span>
+            <span class="text-secondary"> (build <build>82</build>) </span>
           </div>
         </div>
         <div class="col-12 text-center mt-1" style="font-size: small">
@@ -362,41 +370,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bignumber.js/9.0.1/bignumber.min.js" integrity="sha512-3dEpIO2t/6beQ77U/aYgVqJpmSkcvWuTFO4WhCQrSi2tSQV3U+k4plwSKlVOxKibsnd6Z/0evmClsMl4LVZ7Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 
   <script src="index.js"></script>
-
-  <script>
-    const labels = [
-      'Dec',
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-    ];
-    const data = {
-      labels: labels,
-      datasets: [{
-        label: 'price',
-        backgroundColor: '#495057',
-        borderColor: '#495057',
-        data: [0.001, 0.001122, 0.001100, 0.002120, 0.001120, 0.001180, 0.002140, 0.002340],
-      }]
-    };
-
-    const config = {
-      type: 'line',
-      data,
-      options: {maintainAspectRatio: false}
-    };
-
-    // var myChart = new Chart(
-    //   document.getElementById('priceChart'),
-    //   config
-    // );
-  </script>
 </body>
 
 </html>
